@@ -1,0 +1,14 @@
+language: csharp
+solution: RoyalSoft.Network.sln
+dist: trusty
+os:
+  - linux
+branches:
+  only:
+    - master
+    - dev
+    - /^(.*\/)?ci-.*$/
+notifications:
+  on_success: always
+  on_failure: always
+  on_start: always
