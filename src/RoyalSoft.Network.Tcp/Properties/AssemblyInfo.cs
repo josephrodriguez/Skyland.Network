@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RoyalSoft.Network")]
+[assembly: AssemblyTitle("RoyalSoft.Network.Tcp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RoyalSoft.Network")]
+[assembly: AssemblyProduct("RoyalSoft.Network.Tcp")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d705b251-7b4c-4166-8d79-42e4911d0eb9")]
+[assembly: Guid("59e20652-69ce-419e-b5ab-5944306f4d45")]
 
 // Version information for an assembly consists of the following four values:
 //

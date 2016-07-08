@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoyalSoft.Network", "RoyalSoft.Network.csproj", "{D705B251-7B4C-4166-8D79-42E4911D0EB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoyalSoft.Network.Tcp", "src\RoyalSoft.Network.Tcp\RoyalSoft.Network.Tcp.csproj", "{59E20652-69CE-419E-B5AB-5944306F4D45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D705B251-7B4C-4166-8D79-42E4911D0EB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D705B251-7B4C-4166-8D79-42E4911D0EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D705B251-7B4C-4166-8D79-42E4911D0EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D705B251-7B4C-4166-8D79-42E4911D0EB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E20652-69CE-419E-B5AB-5944306F4D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E20652-69CE-419E-B5AB-5944306F4D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E20652-69CE-419E-B5AB-5944306F4D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E20652-69CE-419E-B5AB-5944306F4D45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
