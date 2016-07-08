@@ -42,8 +42,13 @@
   <ItemGroup>
     <Compile Include="Enums\CompressionMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tcp\Configuration\HubClientConfigurationComponent.cs" />
+    <Compile Include="Tcp\Configuration\IHubClientEvents.cs" />
     <Compile Include="Tcp\IHubClient.cs" />
+    <Compile Include="Tcp\Configuration\IHubClientConfiguration.cs" />
     <Compile Include="Tcp\IHubServer.cs" />
+    <Compile Include="Tcp\Impl\DefaultHubClient.cs" />
+    <Compile Include="Tcp\Impl\DefaultHubServer.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

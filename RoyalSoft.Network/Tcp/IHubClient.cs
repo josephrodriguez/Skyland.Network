@@ -10,14 +10,6 @@ namespace RoyalSoft.Network.Tcp
 {
     public interface IHubClient
     {
-        #region Events
-
-        event RemoteCertificateValidationCallback OnValidateServerCertificate;
-
-        event LocalCertificateSelectionCallback OnValidateLocalCertificate;
-
-        #endregion
-
         void EnableSsl();
         void EnableCompression(CompressionMethod method);
 

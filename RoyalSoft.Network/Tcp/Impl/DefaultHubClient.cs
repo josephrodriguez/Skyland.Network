@@ -2,18 +2,14 @@
 
 using System;
 using System.Net;
-using System.Net.Security;
 using RoyalSoft.Network.Enums;
 
 #endregion
 
 namespace RoyalSoft.Network.Tcp.Impl
 {
-    internal class DeafultHubClientImpl : IHubClient
+    internal class DefaultHubClient : IHubClient
     {
-        public event RemoteCertificateValidationCallback OnValidateServerCertificate;
-        public event LocalCertificateSelectionCallback OnValidateLocalCertificate;
-
         public void EnableSsl()
         {
             throw new NotImplementedException();

@@ -6,7 +6,7 @@ using System;
 
 namespace RoyalSoft.Network.Tcp.Impl
 {
-    internal class DefaultHubServerImpl : IHubServer
+    internal class DefaultHubServer : IHubServer
     {
         public void Start()
         {
