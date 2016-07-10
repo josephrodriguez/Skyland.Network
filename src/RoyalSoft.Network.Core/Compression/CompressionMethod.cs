@@ -1,4 +1,4 @@
-﻿namespace RoyalSoft.Network.Enums
+﻿namespace RoyalSoft.Network.Tcp.Compression
 {
     public enum CompressionMethod
     {

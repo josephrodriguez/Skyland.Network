@@ -1,6 +1,6 @@
 ﻿using System.Net.Security;
 
-namespace RoyalSoft.Network.Tcp.Configuration
+namespace RoyalSoft.Network.Tcp.Client.Configuration
 {
     public interface IHubClientEvents
     {

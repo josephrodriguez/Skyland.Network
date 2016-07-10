@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoyalSoft.Network.Tcp", "src\RoyalSoft.Network.Tcp\RoyalSoft.Network.Tcp.csproj", "{59E20652-69CE-419E-B5AB-5944306F4D45}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F5441B17-047A-4FB8-BEDF-8651C23DB28E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C5BACD04-2076-4AA2-9FFE-EBC1B46D9BFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoyalSoft.Network.Tcp.UnitTesting", "test\RoyalSoft.Network.Tcp.UnitTesting\RoyalSoft.Network.Tcp.UnitTesting.csproj", "{5802D9D1-01C3-4CD9-ADAE-D2A793EFD43A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoyalSoft.Network.Core", "src\RoyalSoft.Network.Core\RoyalSoft.Network.Core.csproj", "{842B4BB4-CE78-402D-8631-A653BBA9F8CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoyalSoft.Network.Tcp.Server", "src\RoyalSoft.Network.Tcp.Server\RoyalSoft.Network.Tcp.Server.csproj", "{CFEF48BB-38F4-4D0D-B015-7DBAF55420E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoyalSoft.Network.Tcp.Client", "src\RoyalSoft.Network.Tcp.Client\RoyalSoft.Network.Tcp.Client.csproj", "{EB0601E0-4AF0-42C7-8D90-36C1B29B9A52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +21,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{59E20652-69CE-419E-B5AB-5944306F4D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59E20652-69CE-419E-B5AB-5944306F4D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59E20652-69CE-419E-B5AB-5944306F4D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59E20652-69CE-419E-B5AB-5944306F4D45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5802D9D1-01C3-4CD9-ADAE-D2A793EFD43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5802D9D1-01C3-4CD9-ADAE-D2A793EFD43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5802D9D1-01C3-4CD9-ADAE-D2A793EFD43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5802D9D1-01C3-4CD9-ADAE-D2A793EFD43A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{842B4BB4-CE78-402D-8631-A653BBA9F8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{842B4BB4-CE78-402D-8631-A653BBA9F8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{842B4BB4-CE78-402D-8631-A653BBA9F8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{842B4BB4-CE78-402D-8631-A653BBA9F8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFEF48BB-38F4-4D0D-B015-7DBAF55420E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFEF48BB-38F4-4D0D-B015-7DBAF55420E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFEF48BB-38F4-4D0D-B015-7DBAF55420E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFEF48BB-38F4-4D0D-B015-7DBAF55420E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0601E0-4AF0-42C7-8D90-36C1B29B9A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0601E0-4AF0-42C7-8D90-36C1B29B9A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0601E0-4AF0-42C7-8D90-36C1B29B9A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0601E0-4AF0-42C7-8D90-36C1B29B9A52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5802D9D1-01C3-4CD9-ADAE-D2A793EFD43A} = {C5BACD04-2076-4AA2-9FFE-EBC1B46D9BFD}
+		{842B4BB4-CE78-402D-8631-A653BBA9F8CC} = {F5441B17-047A-4FB8-BEDF-8651C23DB28E}
+		{CFEF48BB-38F4-4D0D-B015-7DBAF55420E3} = {F5441B17-047A-4FB8-BEDF-8651C23DB28E}
+		{EB0601E0-4AF0-42C7-8D90-36C1B29B9A52} = {F5441B17-047A-4FB8-BEDF-8651C23DB28E}
 	EndGlobalSection
 EndGlobal

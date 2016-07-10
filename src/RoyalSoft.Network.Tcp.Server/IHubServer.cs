@@ -1,4 +1,4 @@
-﻿namespace RoyalSoft.Network.Tcp
+﻿namespace RoyalSoft.Network.Tcp.Server
 {
     public interface IHubServer
     {
