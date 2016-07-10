@@ -9,7 +9,7 @@ namespace RoyalSoft.Network.Tcp.Client.Configuration
 {
     public class SslConfigurer
     {
-        public SslConfigurer Certificate(X509Certificate certificate)
+        public SslConfigurer Certificate(X509CertificateCollection certificates)
         {
             return this;
         }
@@ -19,12 +19,7 @@ namespace RoyalSoft.Network.Tcp.Client.Configuration
             return this;
         }
 
-        public SslConfigurer CheckRevocationList(bool checkRevocationList)
-        {
-            return this;
-        }
-
-        public SslConfigurer ClientCertificateRequired(bool required)
+        public SslConfigurer CheckCertificateRevocation(bool check)
         {
             return this;
         }

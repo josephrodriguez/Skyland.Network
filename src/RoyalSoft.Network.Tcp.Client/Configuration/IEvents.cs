@@ -2,7 +2,7 @@
 
 namespace RoyalSoft.Network.Tcp.Client.Configuration
 {
-    public interface IHubClientEvents
+    public interface IEvents
     {
         /// <summary>
         /// When SSL is enabled this event will be raised to validate remote certificate
