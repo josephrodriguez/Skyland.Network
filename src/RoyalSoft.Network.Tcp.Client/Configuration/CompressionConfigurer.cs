@@ -1,6 +1,6 @@
 ﻿#region using
 
-using RoyalSoft.Network.Tcp.Compression;
+using RoyalSoft.Network.Core.Compression;
 
 #endregion
 

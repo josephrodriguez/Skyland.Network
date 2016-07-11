@@ -40,10 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\CompressionConfigurer.cs" />
-    <Compile Include="Configuration\Configurer.cs" />
-    <Compile Include="Configuration\SslConfigurer.cs" />
+    <Compile Include="Configuration\Configurers\CompressionConfigurer.cs" />
+    <Compile Include="Configuration\Configure.cs" />
+    <Compile Include="Configuration\Configurers\EventsConfigurer.cs" />
+    <Compile Include="Configuration\Configurers\ServerConfigurer.cs" />
+    <Compile Include="Configuration\Configurers\SslConfigurer.cs" />
+    <Compile Include="Configuration\Interfaces\ICompressionConfiguration.cs" />
+    <Compile Include="Configuration\Interfaces\IEventsConfiguration.cs" />
+    <Compile Include="Configuration\Interfaces\Impl\CompressionConfiguration.cs" />
+    <Compile Include="Configuration\Interfaces\Impl\SslConfiguration.cs" />
+    <Compile Include="Configuration\Interfaces\ISslConfiguration.cs" />
     <Compile Include="IHubServer.cs" />
+    <Compile Include="Impl\DefaultHubServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
