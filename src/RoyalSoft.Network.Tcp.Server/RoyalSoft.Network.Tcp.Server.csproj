@@ -40,16 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\Configurers\BaseConfigurer.cs" />
     <Compile Include="Configuration\Configurers\CompressionConfigurer.cs" />
     <Compile Include="Configuration\Configure.cs" />
     <Compile Include="Configuration\Configurers\EventsConfigurer.cs" />
+    <Compile Include="Configuration\Configurers\OptionsConfigurer.cs" />
     <Compile Include="Configuration\Configurers\ServerConfigurer.cs" />
     <Compile Include="Configuration\Configurers\SslConfigurer.cs" />
-    <Compile Include="Configuration\Interfaces\ICompressionConfiguration.cs" />
-    <Compile Include="Configuration\Interfaces\IEventsConfiguration.cs" />
-    <Compile Include="Configuration\Interfaces\Impl\CompressionConfiguration.cs" />
-    <Compile Include="Configuration\Interfaces\Impl\SslConfiguration.cs" />
-    <Compile Include="Configuration\Interfaces\ISslConfiguration.cs" />
+    <Compile Include="Configuration\Interfaces\ICompression.cs" />
+    <Compile Include="Configuration\Interfaces\IEvents.cs" />
+    <Compile Include="Configuration\Interfaces\Impl\Compression.cs" />
+    <Compile Include="Configuration\Interfaces\Impl\Events.cs" />
+    <Compile Include="Configuration\Interfaces\Impl\Options.cs" />
+    <Compile Include="Configuration\Interfaces\Impl\Ssl.cs" />
+    <Compile Include="Configuration\Interfaces\IOptions.cs" />
+    <Compile Include="Configuration\Interfaces\ISsl.cs" />
     <Compile Include="IHubServer.cs" />
     <Compile Include="Impl\DefaultHubServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

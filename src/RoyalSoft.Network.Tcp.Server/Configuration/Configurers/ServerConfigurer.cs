@@ -13,8 +13,10 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
 {
     public class ServerConfigurer
     {
-        private ISslConfiguration _sslConfig;
-        private ICompressionConfiguration _compressionConfig;
+        private ISsl _sslConfig;
+        private IEvents _events;
+        private ICompression _compressionConfig;
+        private IOptions _optionsConfig;
 
         private readonly IPEndPoint _endpoint;
 
@@ -33,13 +35,12 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             Assert.IsNotNull(action);
             Assert.IsNull(_compressionConfig);
 
-            _compressionConfig = new CompressionConfiguration {Enabled = true};
 
-            var configurer = new CompressionConfigurer(_compressionConfig);
+            var configurer = new CompressionConfigurer();
             action(configurer);
 
-            //Set defaults
-            configurer.SetDefaultConfig();
+            //Build configuration
+            _compressionConfig = configurer.Build();
 
             return this;
         }
@@ -54,13 +55,25 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             Assert.IsNotNull(action);
             Assert.IsNull(_sslConfig);
 
-            _sslConfig = new SslConfiguration {Enabled = true};
-
-            var configurer = new SslConfigurer(_sslConfig);
+            var configurer = new SslConfigurer();
             action(configurer);
 
-            //Set default values
-            configurer.SetDefaultConfig();
+            //Build SSL configuration
+            _sslConfig = configurer.Build();
+
+            return this;
+        }
+
+        public ServerConfigurer Options(Action<OptionsConfigurer> action)
+        {
+            Assert.IsNotNull(action);
+            Assert.IsNull(_optionsConfig);
+
+            var configurer = new OptionsConfigurer();
+            action(configurer);
+
+            //Build optional configuration
+            _optionsConfig = configurer.Build();
 
             return this;
         }
@@ -69,20 +82,16 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
         /// Create an instance of <see cref="P:RoyalSoft.Network.Tcp.Server.IHubServer"/> with configuration.
         /// </summary>
         /// <returns>Create an instance of <see cref="P:RoyalSoft.Network.Tcp.Server.IHubServer"/> with configuration.</returns>
-        public IHubServer Build()
+        public IHubServer Create()
         {
             if (_sslConfig == null)
-                _sslConfig = new SslConfiguration {Enabled = false};
+                _sslConfig = new Ssl {Enabled = false};
 
             if(_compressionConfig == null)
-                _compressionConfig = new CompressionConfiguration {Enabled = false};
+                _compressionConfig = new Compression {Enabled = false};
 
-            return 
-                new DefaultHubServer(_endpoint)
-                {
-                    Ssl = _sslConfig,
-                    Compression = _compressionConfig
-                };
+            return
+                new DefaultHubServer(_endpoint, _sslConfig, _compressionConfig, _events, _optionsConfig);
         }
     }
 }

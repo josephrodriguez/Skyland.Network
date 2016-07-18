@@ -6,7 +6,7 @@ using RoyalSoft.Network.Core.Compression;
 
 namespace RoyalSoft.Network.Tcp.Server.Configuration.Interfaces.Impl
 {
-    internal class CompressionConfiguration : ICompressionConfiguration
+    internal class Compression : ICompression
     {
         public bool Enabled { get; set; }
         public CompressionMethod Method { get; set; }
