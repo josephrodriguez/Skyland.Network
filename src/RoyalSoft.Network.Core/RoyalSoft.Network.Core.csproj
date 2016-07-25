@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asserts\Assert.cs" />
-    <Compile Include="Communication\AdvancedTcpClient.cs" />
     <Compile Include="Compression\CompressionMethod.cs" />
     <Compile Include="Compression\GZipCompressor.cs" />
     <Compile Include="Compression\ICompressor.cs" />

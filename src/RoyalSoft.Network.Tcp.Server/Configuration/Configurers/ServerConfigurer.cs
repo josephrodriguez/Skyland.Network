@@ -5,7 +5,7 @@ using System.Net;
 using RoyalSoft.Network.Core.Asserts;
 using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
 using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces.Impl;
-using RoyalSoft.Network.Tcp.Server.Impl;
+using RoyalSoft.Network.Tcp.Server.Internal;
 
 #endregion
 

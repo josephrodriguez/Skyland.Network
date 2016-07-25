@@ -55,8 +55,14 @@
     <Compile Include="Configuration\Interfaces\Impl\Ssl.cs" />
     <Compile Include="Configuration\Interfaces\IOptions.cs" />
     <Compile Include="Configuration\Interfaces\ISsl.cs" />
+    <Compile Include="Dispatchers\MessageDispatcher.cs" />
+    <Compile Include="Enum\ConnectionState.cs" />
+    <Compile Include="Handlers\MessageReceivedEventHandler.cs" />
+    <Compile Include="Handlers\StatusChangedEventHandler.cs" />
     <Compile Include="IHubServer.cs" />
-    <Compile Include="Impl\DefaultHubServer.cs" />
+    <Compile Include="Internal\DefaultHubServer.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="Monitors\ConnectionMonitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
