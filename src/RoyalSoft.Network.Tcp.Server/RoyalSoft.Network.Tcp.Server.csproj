@@ -42,10 +42,10 @@
     <Compile Include="Configuration\Configurers\SslConfigurer.cs" />
     <Compile Include="Configuration\Interfaces\ICompression.cs" />
     <Compile Include="Configuration\Interfaces\IEvents.cs" />
-    <Compile Include="Configuration\Interfaces\Impl\Compression.cs" />
-    <Compile Include="Configuration\Interfaces\Impl\Events.cs" />
-    <Compile Include="Configuration\Interfaces\Impl\Options.cs" />
-    <Compile Include="Configuration\Interfaces\Impl\Ssl.cs" />
+    <Compile Include="Internal\Configuration\Compression.cs" />
+    <Compile Include="Internal\Configuration\Events.cs" />
+    <Compile Include="Internal\Configuration\Options.cs" />
+    <Compile Include="Internal\Configuration\Ssl.cs" />
     <Compile Include="Configuration\Interfaces\IOptions.cs" />
     <Compile Include="Configuration\Interfaces\ISsl.cs" />
     <Compile Include="Dispatchers\MessageDispatcher.cs" />

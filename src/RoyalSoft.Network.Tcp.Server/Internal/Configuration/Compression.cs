@@ -1,10 +1,11 @@
 ﻿#region using
 
 using RoyalSoft.Network.Core.Compression;
+using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Interfaces.Impl
+namespace RoyalSoft.Network.Tcp.Server.Internal.Configuration
 {
     internal class Compression : ICompression
     {
@@ -13,7 +14,7 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Interfaces.Impl
 
         public override string ToString()
         {
-            return $"{Method}";
+            return Method.ToString();
         }
     }
 }

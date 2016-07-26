@@ -1,18 +1,13 @@
-﻿using System.Net.Security;
+﻿#region using
+
+
+
+#endregion
 
 namespace RoyalSoft.Network.Tcp.Server.Configuration.Interfaces
 {
     public interface IEvents
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        event LocalCertificateSelectionCallback OnLocalCertificateSelection;
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        event RemoteCertificateValidationCallback OnRemoteCertificateValidation;
+        void RaiseMessageReceived(Message message);
     }
 }

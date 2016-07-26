@@ -2,11 +2,8 @@
 
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.CompilerServices;
 using RoyalSoft.Network.Core.Thread;
 using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
 using RoyalSoft.Network.Tcp.Server.Dispatchers;
@@ -94,7 +91,7 @@ namespace RoyalSoft.Network.Tcp.Server.Internal
                     else
                         AcceptConnectedClient(client);
                 }
-                catch (Exception)
+                catch (Exception exception)
                 {
                 }
             }
@@ -106,11 +103,19 @@ namespace RoyalSoft.Network.Tcp.Server.Internal
 
             var socket = client.Client;
 
-            if (CreateMonitorForSocket(socket) && CreateDispatcherForSocket(socket))
+            if (ConfigureSocket(socket))
                 return;
 
             DecrementConnections();
             Cleanup(socket.RemoteEndPoint);
+        }
+
+        private bool ConfigureSocket(Socket socket)
+        {
+            return 
+                CreateMonitorForSocket(socket) && 
+                CreateDispatcherForSocket(socket);
+
         }
 
         private void Cleanup(EndPoint endPoint)
@@ -162,13 +167,12 @@ namespace RoyalSoft.Network.Tcp.Server.Internal
                 return false;
 
             dispatcher.Start();
+
             return true;
         }
 
         private void MonitorOnOnStatusChangedEvent(EndPoint endpoint, ConnectionState status)
         {
-            Trace.WriteLine($"Execute status:{status} from {endpoint}.");
-
             if (status != ConnectionState.Closed) return;
 
             DecrementConnections();
@@ -177,7 +181,7 @@ namespace RoyalSoft.Network.Tcp.Server.Internal
 
         private void DispatcherOnOnMessageReceived(Message message)
         {
-            Trace.WriteLine($"Execute message:{message.Endpoint} from {Convert.ToBase64String(message.Data)}.");
+            _events.RaiseMessageReceived(message);
         }
     }
 }

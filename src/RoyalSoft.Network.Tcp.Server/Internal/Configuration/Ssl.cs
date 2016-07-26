@@ -3,10 +3,11 @@
 using System.Net.Security;
 using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
+using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Interfaces.Impl
+namespace RoyalSoft.Network.Tcp.Server.Internal.Configuration
 {
     internal class Ssl : ISsl
     {

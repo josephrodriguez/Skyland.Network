@@ -2,7 +2,7 @@
 
 using RoyalSoft.Network.Core.Compression;
 using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
-using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces.Impl;
+using RoyalSoft.Network.Tcp.Server.Internal.Configuration;
 
 #endregion
 

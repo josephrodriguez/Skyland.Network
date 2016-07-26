@@ -4,8 +4,8 @@ using System;
 using System.Net;
 using RoyalSoft.Network.Core.Asserts;
 using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
-using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces.Impl;
 using RoyalSoft.Network.Tcp.Server.Internal;
+using RoyalSoft.Network.Tcp.Server.Internal.Configuration;
 
 #endregion
 
@@ -16,7 +16,7 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
         private ISsl _sslConfig;
         private IEvents _events;
         private ICompression _compressionConfig;
-        private IOptions _optionsConfig;
+        private IOptions _options;
 
         private readonly IPEndPoint _endpoint;
 
@@ -39,9 +39,19 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             var configurer = new CompressionConfigurer();
             action(configurer);
 
-            //Build configuration
             _compressionConfig = configurer.Build();
+            return this;
+        }
 
+        public ServerConfigurer Events(Action<EventsConfigurer> configureAction)
+        {
+            Assert.IsNotNull(configureAction);
+            Assert.IsNull(_events);
+
+            var configurer = new EventsConfigurer();
+            configureAction(configurer);
+
+            _events = configurer.Build();
             return this;
         }
 
@@ -67,13 +77,13 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
         public ServerConfigurer Options(Action<OptionsConfigurer> action)
         {
             Assert.IsNotNull(action);
-            Assert.IsNull(_optionsConfig);
+            Assert.IsNull(_options);
 
             var configurer = new OptionsConfigurer();
             action(configurer);
 
             //Build optional configuration
-            _optionsConfig = configurer.Build();
+            _options = configurer.Build();
 
             return this;
         }
@@ -90,8 +100,17 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             if(_compressionConfig == null)
                 _compressionConfig = new Compression {Enabled = false};
 
+            if (_options == null)
+                _options = GetDefaultOptions();
+
             return
-                new DefaultHubServer(_endpoint, _sslConfig, _compressionConfig, _events, _optionsConfig);
+                new DefaultHubServer(_endpoint, _sslConfig, _compressionConfig, _events, _options);
+        }
+
+        private static IOptions GetDefaultOptions()
+        {
+            var configurer = new OptionsConfigurer();
+            return configurer.Build();
         }
     }
 }

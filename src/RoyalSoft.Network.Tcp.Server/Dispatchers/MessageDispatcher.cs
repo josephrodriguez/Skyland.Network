@@ -33,7 +33,7 @@ namespace RoyalSoft.Network.Tcp.Server.Dispatchers
 
         public void Start()
         {
-            _worker.StartForever(TimeSpan.FromSeconds(5));
+            _worker.StartForever(TimeSpan.FromSeconds(1));
         }
 
         public void Cancel()
