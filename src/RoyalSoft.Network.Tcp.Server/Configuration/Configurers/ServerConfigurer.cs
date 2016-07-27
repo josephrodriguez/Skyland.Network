@@ -3,6 +3,7 @@
 using System;
 using System.Net;
 using RoyalSoft.Network.Core.Asserts;
+using RoyalSoft.Network.Core.Logging;
 using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
 using RoyalSoft.Network.Tcp.Server.Internal;
 using RoyalSoft.Network.Tcp.Server.Internal.Configuration;
@@ -17,6 +18,8 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
         private IEvents _events;
         private ICompression _compressionConfig;
         private IOptions _options;
+
+        private ILoggerFactory _loggerFactory;
 
         private readonly IPEndPoint _endpoint;
 
@@ -34,7 +37,6 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
         {
             Assert.IsNotNull(action);
             Assert.IsNull(_compressionConfig);
-
 
             var configurer = new CompressionConfigurer();
             action(configurer);
@@ -88,6 +90,15 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             return this;
         }
 
+        public ServerConfigurer Logging(Action<LoggingConfigurer> action)
+        {
+            var configurer = new LoggingConfigurer();
+            action(configurer);
+
+            _loggerFactory = configurer.Build();
+            return this;
+        }
+
         /// <summary>
         /// Create an instance of <see cref="P:RoyalSoft.Network.Tcp.Server.IHubServer"/> with configuration.
         /// </summary>
@@ -104,7 +115,7 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
                 _options = GetDefaultOptions();
 
             return
-                new DefaultHubServer(_endpoint, _sslConfig, _compressionConfig, _events, _options);
+                new DefaultHubServer(_endpoint, _sslConfig, _compressionConfig, _events, _options, _loggerFactory);
         }
 
         private static IOptions GetDefaultOptions()

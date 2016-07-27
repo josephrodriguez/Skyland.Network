@@ -37,6 +37,7 @@
     <Compile Include="Configuration\Configurers\CompressionConfigurer.cs" />
     <Compile Include="Configuration\Configure.cs" />
     <Compile Include="Configuration\Configurers\EventsConfigurer.cs" />
+    <Compile Include="Configuration\Configurers\LoggingConfigurer.cs" />
     <Compile Include="Configuration\Configurers\OptionsConfigurer.cs" />
     <Compile Include="Configuration\Configurers\ServerConfigurer.cs" />
     <Compile Include="Configuration\Configurers\SslConfigurer.cs" />

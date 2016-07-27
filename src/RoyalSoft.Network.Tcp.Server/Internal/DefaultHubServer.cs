@@ -4,6 +4,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Sockets;
+using RoyalSoft.Network.Core.Logging;
 using RoyalSoft.Network.Core.Thread;
 using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
 using RoyalSoft.Network.Tcp.Server.Dispatchers;
@@ -31,6 +32,8 @@ namespace RoyalSoft.Network.Tcp.Server.Internal
         private readonly IEvents _events;
         private readonly IOptions _options;
 
+        private ILoggerFactory _loggerFactory;
+
         private TcpListener _listener;
 
         /// <summary>
@@ -45,7 +48,7 @@ namespace RoyalSoft.Network.Tcp.Server.Internal
         /// 
         /// </summary>
         /// <param name="endpoint"></param> <param name="ssl"></param> <param name="compression"></param> <param name="events"></param> <param name="options"></param>
-        protected internal DefaultHubServer(IPEndPoint endpoint, ISsl ssl, ICompression compression, IEvents events, IOptions options)
+        protected internal DefaultHubServer(IPEndPoint endpoint, ISsl ssl, ICompression compression, IEvents events, IOptions options, ILoggerFactory loggerFactory)
         {
             if(ssl == null)
                 throw new ArgumentNullException(nameof(ssl));
@@ -60,6 +63,7 @@ namespace RoyalSoft.Network.Tcp.Server.Internal
             _compression = compression;
             _events = events;
             _options = options;
+            _loggerFactory = loggerFactory;
         }
 
         public void Start()
