@@ -65,9 +65,10 @@ namespace RoyalSoft.Network.Tcp.Server.Internal
         public void Start()
         {
             _listener = new TcpListener(_endpoint);
+            _listener.Start();
 
-            _worker = new Worker(BeginAcceptClients);
-            _worker.Start();
+            _worker = new Worker(ProcessClients);
+            _worker.StartForever(TimeSpan.Zero);
         }
 
         public void Stop()
@@ -77,23 +78,26 @@ namespace RoyalSoft.Network.Tcp.Server.Internal
             _worker.Cancel();
         }
 
-        private void BeginAcceptClients()
+        private void ProcessClients()
         {
-            _listener.Start();
+            try
+            {
+                var client = _listener.AcceptTcpClient();
+                _events.RaiseClientConnected(client.Client.RemoteEndPoint);
 
-            while (true) {
-                try
+                if (_connectionsCount >= _options.AllowedConnections)
                 {
-                    var client = _listener.AcceptTcpClient();
-
-                    if (_connectionsCount >= _options.AllowedConnections)
-                        client.Close();
-                    else
-                        AcceptConnectedClient(client);
+                    _events.RaiseClientRejected(client.Client.RemoteEndPoint);
+                    client.Close();
                 }
-                catch (Exception exception)
+                else
                 {
+                    AcceptConnectedClient(client);
+                    _events.RaiseClientAccepted(client.Client.RemoteEndPoint);
                 }
+            }
+            catch (Exception exception)
+            {
             }
         }
 
@@ -174,6 +178,9 @@ namespace RoyalSoft.Network.Tcp.Server.Internal
         private void MonitorOnOnStatusChangedEvent(EndPoint endpoint, ConnectionState status)
         {
             if (status != ConnectionState.Closed) return;
+
+            //Fire event handlers for disconnected client
+            _events.RaiseClientDisconnected(endpoint);
 
             DecrementConnections();
             Cleanup(endpoint);

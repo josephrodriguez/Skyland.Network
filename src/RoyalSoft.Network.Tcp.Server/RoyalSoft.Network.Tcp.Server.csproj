@@ -42,6 +42,10 @@
     <Compile Include="Configuration\Configurers\SslConfigurer.cs" />
     <Compile Include="Configuration\Interfaces\ICompression.cs" />
     <Compile Include="Configuration\Interfaces\IEvents.cs" />
+    <Compile Include="Handlers\ClientAcceptedEventHandler.cs" />
+    <Compile Include="Handlers\ClientConnectedEventHandler.cs" />
+    <Compile Include="Handlers\ClientDisconnectedEventHandler.cs" />
+    <Compile Include="Handlers\ClientRejectedEventHandler.cs" />
     <Compile Include="Internal\Configuration\Compression.cs" />
     <Compile Include="Internal\Configuration\Events.cs" />
     <Compile Include="Internal\Configuration\Options.cs" />
