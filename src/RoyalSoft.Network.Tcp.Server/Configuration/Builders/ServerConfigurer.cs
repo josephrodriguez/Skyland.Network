@@ -10,16 +10,14 @@ using RoyalSoft.Network.Tcp.Server.Internal.Configuration;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
+namespace RoyalSoft.Network.Tcp.Server.Configuration.Builders
 {
     public class ServerConfigurer
     {
-        private ISsl _sslConfig;
+        private ISslConfiguration _sslConfig;
         private IEvents _events;
         private ICompression _compressionConfig;
-        private IOptions _options;
-
-        private ILoggerFactory _loggerFactory;
+        private IConfiguration _options;
 
         private readonly IPEndPoint _endpoint;
 
@@ -33,27 +31,27 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
         /// </summary>
         /// <param name="action"></param>
         /// <returns></returns>
-        public ServerConfigurer Compression(Action<CompressionConfigurer> action)
+        public ServerConfigurer Compression(Action<CompressionBuilder> action)
         {
             Assert.IsNotNull(action);
             Assert.IsNull(_compressionConfig);
 
-            var configurer = new CompressionConfigurer();
-            action(configurer);
+            var builder = new CompressionBuilder();
+            action(builder);
 
-            _compressionConfig = configurer.Build();
+            _compressionConfig = builder.Build();
             return this;
         }
 
-        public ServerConfigurer Events(Action<EventsConfigurer> configureAction)
+        public ServerConfigurer Events(Action<EventsBuilder> configureAction)
         {
             Assert.IsNotNull(configureAction);
             Assert.IsNull(_events);
 
-            var configurer = new EventsConfigurer();
-            configureAction(configurer);
+            var builder = new EventsBuilder();
+            configureAction(builder);
 
-            _events = configurer.Build();
+            _events = builder.Build();
             return this;
         }
 
@@ -62,12 +60,12 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
         /// </summary>
         /// <param name="action"></param>
         /// <returns></returns>
-        public ServerConfigurer Ssl(Action<SslConfigurer> action)
+        public ServerConfigurer Ssl(Action<SslBuilder> action)
         {
             Assert.IsNotNull(action);
             Assert.IsNull(_sslConfig);
 
-            var configurer = new SslConfigurer();
+            var configurer = new SslBuilder();
             action(configurer);
 
             //Build SSL configuration
@@ -76,12 +74,12 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             return this;
         }
 
-        public ServerConfigurer Options(Action<OptionsConfigurer> action)
+        public ServerConfigurer Options(Action<ConfigurationBuilder> action)
         {
             Assert.IsNotNull(action);
             Assert.IsNull(_options);
 
-            var configurer = new OptionsConfigurer();
+            var configurer = new ConfigurationBuilder();
             action(configurer);
 
             //Build optional configuration
@@ -90,12 +88,12 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             return this;
         }
 
-        public ServerConfigurer Logging(Action<LoggingConfigurer> action)
+        public ServerConfigurer Logging(Action<LoggingBuilder> action)
         {
-            var configurer = new LoggingConfigurer();
-            action(configurer);
+            var builder = new LoggingBuilder();
+            action(builder);
 
-            _loggerFactory = configurer.Build();
+            LoggerFactory.Current = builder.Build();
             return this;
         }
 
@@ -115,12 +113,12 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
                 _options = GetDefaultOptions();
 
             return
-                new DefaultHubServer(_endpoint, _sslConfig, _compressionConfig, _events, _options, _loggerFactory);
+                new DefaultHubServer(_endpoint, _sslConfig, _compressionConfig, _events, _options);
         }
 
-        private static IOptions GetDefaultOptions()
+        private static IConfiguration GetDefaultOptions()
         {
-            var configurer = new OptionsConfigurer();
+            var configurer = new ConfigurationBuilder();
             return configurer.Build();
         }
     }

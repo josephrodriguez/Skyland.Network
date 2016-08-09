@@ -1,20 +1,21 @@
 ﻿#region using
 
+using System;
 using RoyalSoft.Network.Core.Compression;
 using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
 using RoyalSoft.Network.Tcp.Server.Internal.Configuration;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
+namespace RoyalSoft.Network.Tcp.Server.Configuration.Builders
 {
-    public class CompressionConfigurer : BaseConfigurer<ICompression>
+    public class CompressionBuilder : Builder<ICompression>
     {
-        private CompressionMethod _method;
+        private Type _type;
 
-        public CompressionConfigurer UseMethod(CompressionMethod method)
+        public CompressionBuilder Use<T>() where T : ICompressor
         {
-            _method = method;
+            _type = typeof (T);
             return this;
         }
 
@@ -24,7 +25,7 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
                 new Compression
                 {
                     Enabled = true,
-                    Method = _method
+                    Type = _type
                 };
         }
     }

@@ -3,7 +3,7 @@
 using System;
 using System.Net;
 using System.Net.Sockets;
-using RoyalSoft.Network.Core.Thread;
+using RoyalSoft.Network.Core.Threading;
 using RoyalSoft.Network.Tcp.Server.Handlers;
 
 #endregion

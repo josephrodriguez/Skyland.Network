@@ -4,9 +4,9 @@ using RoyalSoft.Network.Core.Logging;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
+namespace RoyalSoft.Network.Tcp.Server.Configuration.Builders
 {
-    public class LoggingConfigurer : BaseConfigurer<ILoggerFactory>
+    public class LoggingBuilder : Builder<ILoggerFactory>
     {
         private ILoggerFactory _factory;
 

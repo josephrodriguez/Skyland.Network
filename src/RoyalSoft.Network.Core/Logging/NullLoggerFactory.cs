@@ -6,7 +6,7 @@ using System;
 
 namespace RoyalSoft.Network.Core.Logging
 {
-    public class NullLoggerFactory : AbstractLoggerFactory
+    public class NullLoggerFactory : LoggerFactory
     {
         private static NullLogger _logger;
 

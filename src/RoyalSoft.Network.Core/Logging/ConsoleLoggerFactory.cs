@@ -7,7 +7,7 @@ using System.Collections.Concurrent;
 
 namespace RoyalSoft.Network.Core.Logging
 {
-    public class ConsoleLoggerFactory : AbstractLoggerFactory
+    public class ConsoleLoggerFactory : LoggerFactory
     {
         private readonly ConcurrentDictionary<Type, ILog> _loggers;
 
@@ -16,14 +16,13 @@ namespace RoyalSoft.Network.Core.Logging
             _loggers = new ConcurrentDictionary<Type, ILog>();   
         }
 
-
         protected override ILog GetLogger(Type type)
         {
             ILog log;
             if (_loggers.TryGetValue(type, out log))
                 return log;
 
-            log = new ConsoleLogger();
+            log = new ConsoleLogger(type);
             _loggers.TryAdd(type, log);
             return log;
         }

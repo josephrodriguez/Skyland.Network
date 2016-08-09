@@ -8,7 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace RoyalSoft.Network.Tcp.Server.Configuration.Interfaces
 {
-    public interface ISsl
+    public interface ISslConfiguration
     {
         bool Enabled { get; }
         SslProtocols Protocols { get; }

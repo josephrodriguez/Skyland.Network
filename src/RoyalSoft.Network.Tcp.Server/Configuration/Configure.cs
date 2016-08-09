@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using RoyalSoft.Network.Tcp.Server.Configuration.Configurers;
+using RoyalSoft.Network.Tcp.Server.Configuration.Builders;
 
 namespace RoyalSoft.Network.Tcp.Server.Configuration
 {

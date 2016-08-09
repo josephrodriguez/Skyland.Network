@@ -8,7 +8,7 @@ namespace RoyalSoft.Network.Tcp.Client.Configuration
 {
     public class CompressionConfigurer
     {
-        public CompressionConfigurer UseMethod(CompressionMethod method)
+        public CompressionConfigurer Use<T>() where T : ICompressor
         {
             return this;
         }

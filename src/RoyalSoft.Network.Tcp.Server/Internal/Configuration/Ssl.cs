@@ -9,7 +9,7 @@ using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
 
 namespace RoyalSoft.Network.Tcp.Server.Internal.Configuration
 {
-    internal class Ssl : ISsl
+    internal class Ssl : ISslConfiguration
     {
         public bool Enabled { get; set; }
         public SslProtocols Protocols { get; set; }

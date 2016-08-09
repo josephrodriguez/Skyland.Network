@@ -33,14 +33,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\Configurers\BaseConfigurer.cs" />
-    <Compile Include="Configuration\Configurers\CompressionConfigurer.cs" />
+    <Compile Include="Configuration\Builders\Builder.cs" />
+    <Compile Include="Configuration\Builders\CompressionBuilder.cs" />
     <Compile Include="Configuration\Configure.cs" />
-    <Compile Include="Configuration\Configurers\EventsConfigurer.cs" />
-    <Compile Include="Configuration\Configurers\LoggingConfigurer.cs" />
-    <Compile Include="Configuration\Configurers\OptionsConfigurer.cs" />
-    <Compile Include="Configuration\Configurers\ServerConfigurer.cs" />
-    <Compile Include="Configuration\Configurers\SslConfigurer.cs" />
+    <Compile Include="Configuration\Builders\EventsBuilder.cs" />
+    <Compile Include="Configuration\Builders\LoggingBuilder.cs" />
+    <Compile Include="Configuration\Builders\ConfigurationBuilder.cs" />
+    <Compile Include="Configuration\Builders\ServerConfigurer.cs" />
+    <Compile Include="Configuration\Builders\SslBuilder.cs" />
     <Compile Include="Configuration\Interfaces\ICompression.cs" />
     <Compile Include="Configuration\Interfaces\IEvents.cs" />
     <Compile Include="Handlers\ClientAcceptedEventHandler.cs" />
@@ -51,14 +51,17 @@
     <Compile Include="Internal\Configuration\Events.cs" />
     <Compile Include="Internal\Configuration\Options.cs" />
     <Compile Include="Internal\Configuration\Ssl.cs" />
-    <Compile Include="Configuration\Interfaces\IOptions.cs" />
-    <Compile Include="Configuration\Interfaces\ISsl.cs" />
+    <Compile Include="Configuration\Interfaces\IConfiguration.cs" />
+    <Compile Include="Configuration\Interfaces\ISslConfiguration.cs" />
     <Compile Include="Dispatchers\MessageDispatcher.cs" />
     <Compile Include="Enum\ConnectionState.cs" />
     <Compile Include="Handlers\MessageReceivedEventHandler.cs" />
     <Compile Include="Handlers\StatusChangedEventHandler.cs" />
     <Compile Include="IHubServer.cs" />
     <Compile Include="Internal\DefaultHubServer.cs" />
+    <Compile Include="Internal\Pipeline\ConfigurationComponent.cs" />
+    <Compile Include="Internal\Pipeline\FilterComponent.cs" />
+    <Compile Include="Internal\Pipeline\SslComponent.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Monitors\ConnectionMonitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

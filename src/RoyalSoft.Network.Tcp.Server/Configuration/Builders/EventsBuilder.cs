@@ -8,18 +8,18 @@ using RoyalSoft.Network.Tcp.Server.Internal.Configuration;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
+namespace RoyalSoft.Network.Tcp.Server.Configuration.Builders
 {
-    public class EventsConfigurer : BaseConfigurer<IEvents>
+    public class EventsBuilder : Builder<IEvents>
     {
         private readonly Events _events;
 
-        public EventsConfigurer()
+        public EventsBuilder()
         {
             _events = new Events();
         }
 
-        public EventsConfigurer OnMessageReceived(Action<Message> action)
+        public EventsBuilder OnMessageReceived(Action<Message> action)
         {
             if(action == null) throw new ArgumentNullException();
 
@@ -27,7 +27,7 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             return this;
         }
 
-        public EventsConfigurer OnClientConnected(Action<EndPoint> action)
+        public EventsBuilder OnClientConnected(Action<EndPoint> action)
         {
             if(action == null) throw new ArgumentNullException();
 
@@ -35,7 +35,7 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             return this;
         }
 
-        public EventsConfigurer OnClientDisconnected(Action<EndPoint> action)
+        public EventsBuilder OnClientDisconnected(Action<EndPoint> action)
         {
             if(action == null) throw new ArgumentNullException();
 
@@ -43,7 +43,7 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             return this;
         }
 
-        public EventsConfigurer OnClientAccepted(Action<EndPoint> action)
+        public EventsBuilder OnClientAccepted(Action<EndPoint> action)
         {
             if (action == null) throw new ArgumentNullException();
 
@@ -51,7 +51,7 @@ namespace RoyalSoft.Network.Tcp.Server.Configuration.Configurers
             return this;
         }
 
-        public EventsConfigurer OnClientRejected(Action<EndPoint> action)
+        public EventsBuilder OnClientRejected(Action<EndPoint> action)
         {
             if(action == null) throw new ArgumentNullException();
 

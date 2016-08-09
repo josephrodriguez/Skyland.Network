@@ -6,11 +6,11 @@ using System;
 
 namespace RoyalSoft.Network.Core.Logging
 {
-    public class TraceLoggerFactory : AbstractLoggerFactory
+    public class TraceLoggerFactory : LoggerFactory
     {
         protected override ILog GetLogger(Type type)
         {
-            throw new NotImplementedException();
+            return new TraceLogger(type);
         }
     }
 }
