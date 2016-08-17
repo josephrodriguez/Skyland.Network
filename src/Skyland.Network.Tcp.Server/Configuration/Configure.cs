@@ -1,8 +1,7 @@
 ﻿using System.Net;
-using RoyalSoft.Network.Tcp.Server.Configuration.Builders;
-using RoyalSoft.Network.Tcp.Server.Internal;
+using Skyland.Network.Tcp.Server.Internal;
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration
+namespace Skyland.Network.Tcp.Server.Configuration
 {
     /// <summary>
     /// 

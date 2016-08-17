@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Logging
+namespace Skyland.Network.Core.Logging
 {
     public class TraceLoggerFactory : LoggerFactory
     {

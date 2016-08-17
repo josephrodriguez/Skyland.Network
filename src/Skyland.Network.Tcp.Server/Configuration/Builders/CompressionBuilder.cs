@@ -1,13 +1,13 @@
 ﻿#region using
 
 using System;
-using RoyalSoft.Network.Core.Compression;
-using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
-using RoyalSoft.Network.Tcp.Server.Internal.Configuration;
+using Skyland.Network.Core.Compression;
+using Skyland.Network.Tcp.Server.Configuration.Interfaces;
+using Skyland.Network.Tcp.Server.Internal.Configuration;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Builders
+namespace Skyland.Network.Tcp.Server.Configuration.Builders
 {
     public class CompressionBuilder : Builder<ICompressConfiguration>
     {

@@ -1,10 +1,10 @@
 ﻿#region using
 
-using RoyalSoft.Network.Core.Pipeline.Handlers;
+using Skyland.Network.Core.Pipeline.Handlers;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Pipeline
+namespace Skyland.Network.Core.Pipeline
 {
     public interface IPipeline<T>
     {

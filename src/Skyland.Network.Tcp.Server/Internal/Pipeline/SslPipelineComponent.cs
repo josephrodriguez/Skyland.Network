@@ -3,13 +3,13 @@
 using System;
 using System.Net.Security;
 using System.Net.Sockets;
-using RoyalSoft.Network.Core.Logging;
-using RoyalSoft.Network.Core.Pipeline;
-using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
+using Skyland.Network.Core.Logging;
+using Skyland.Network.Core.Pipeline;
+using Skyland.Network.Tcp.Server.Configuration.Interfaces;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Internal.Pipeline
+namespace Skyland.Network.Tcp.Server.Internal.Pipeline
 {
     class SslPipelineComponent : IPipelineComponent<TcpClient>
     {

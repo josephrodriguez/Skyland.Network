@@ -1,11 +1,11 @@
 ﻿#region using
 
 using System.Net.Sockets;
-using RoyalSoft.Network.Core.Pipeline;
+using Skyland.Network.Core.Pipeline;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Internal.Pipeline
+namespace Skyland.Network.Tcp.Server.Internal.Pipeline
 {
     class FilterComponent : IPipelineComponent<TcpClient>
     {

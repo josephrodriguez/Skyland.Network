@@ -1,10 +1,10 @@
 ﻿#region using
 
-using RoyalSoft.Network.Core.Logging;
+using Skyland.Network.Core.Logging;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Builders
+namespace Skyland.Network.Tcp.Server.Configuration.Builders
 {
     public class LoggingBuilder : Builder<ILoggerFactory>
     {

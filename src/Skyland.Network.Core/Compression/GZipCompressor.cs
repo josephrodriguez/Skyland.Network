@@ -5,7 +5,7 @@ using System.IO.Compression;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Compression
+namespace Skyland.Network.Core.Compression
 {
     public class GZipCompressor : ICompressor
     {

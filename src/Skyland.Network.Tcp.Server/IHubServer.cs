@@ -1,4 +1,4 @@
-﻿namespace RoyalSoft.Network.Tcp.Server
+﻿namespace Skyland.Network.Tcp.Server
 {
     public interface IHubServer
     {

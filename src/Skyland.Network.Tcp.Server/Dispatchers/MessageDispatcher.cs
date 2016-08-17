@@ -3,12 +3,12 @@
 using System;
 using System.Net;
 using System.Net.Sockets;
-using RoyalSoft.Network.Core.Threading;
-using RoyalSoft.Network.Tcp.Server.Handlers;
+using Skyland.Network.Core.Threading;
+using Skyland.Network.Tcp.Server.Handlers;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Dispatchers
+namespace Skyland.Network.Tcp.Server.Dispatchers
 {
     internal class MessageDispatcher
     {

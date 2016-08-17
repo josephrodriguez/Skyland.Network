@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RoyalSoft.Network.Core.Logging
+namespace Skyland.Network.Core.Logging
 {
     class TraceLogger : ILog
     {

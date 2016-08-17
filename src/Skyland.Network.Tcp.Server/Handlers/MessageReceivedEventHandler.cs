@@ -1,4 +1,4 @@
-﻿namespace RoyalSoft.Network.Tcp.Server.Handlers
+﻿namespace Skyland.Network.Tcp.Server.Handlers
 {
     public delegate void MessageReceivedEventHandler(Message message);
 }

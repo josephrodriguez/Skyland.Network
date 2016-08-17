@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Client.Configuration
+namespace Skyland.Network.Tcp.Client.Configuration
 {
     public class SslConfigurer
     {

@@ -6,7 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Interfaces
+namespace Skyland.Network.Tcp.Server.Configuration.Interfaces
 {
     public interface ISslConfiguration
     {

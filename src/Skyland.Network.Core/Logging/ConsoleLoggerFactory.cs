@@ -5,7 +5,7 @@ using System.Collections.Concurrent;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Logging
+namespace Skyland.Network.Core.Logging
 {
     public class ConsoleLoggerFactory : LoggerFactory
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RoyalSoft.Network.Tcp.Server.Enum
+namespace Skyland.Network.Tcp.Server.Enum
 {
     [Flags]
     public enum ConnectionState

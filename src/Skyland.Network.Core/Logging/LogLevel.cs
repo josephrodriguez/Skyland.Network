@@ -1,4 +1,4 @@
-﻿namespace RoyalSoft.Network.Core.Logging
+﻿namespace Skyland.Network.Core.Logging
 {
     public enum LogLevel
     {

@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Asserts
+namespace Skyland.Network.Core.Asserts
 {
     public static class Assert
     {

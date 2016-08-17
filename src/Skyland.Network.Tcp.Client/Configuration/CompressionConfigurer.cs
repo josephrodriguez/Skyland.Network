@@ -1,10 +1,10 @@
 ﻿#region using
 
-using RoyalSoft.Network.Core.Compression;
+using Skyland.Network.Core.Compression;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Client.Configuration
+namespace Skyland.Network.Tcp.Client.Configuration
 {
     public class CompressionConfigurer
     {

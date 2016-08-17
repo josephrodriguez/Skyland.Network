@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Interfaces
+namespace Skyland.Network.Tcp.Server.Configuration.Interfaces
 {
     public interface INetworkConfiguration
     {

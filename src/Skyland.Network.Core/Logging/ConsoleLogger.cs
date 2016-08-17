@@ -5,7 +5,7 @@ using System.Threading;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Logging
+namespace Skyland.Network.Core.Logging
 {
     class ConsoleLogger : ILog
     {

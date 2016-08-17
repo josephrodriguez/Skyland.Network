@@ -4,7 +4,7 @@ using System.Net;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Client
+namespace Skyland.Network.Tcp.Client
 {
     public interface IHubClient
     {

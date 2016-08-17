@@ -1,8 +1,8 @@
 ﻿using System.Net;
-using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
-using RoyalSoft.Network.Tcp.Server.Handlers;
+using Skyland.Network.Tcp.Server.Configuration.Interfaces;
+using Skyland.Network.Tcp.Server.Handlers;
 
-namespace RoyalSoft.Network.Tcp.Server.Internal.Configuration
+namespace Skyland.Network.Tcp.Server.Internal.Configuration
 {
     internal class NetworkConfiguration : INetworkConfiguration
     {

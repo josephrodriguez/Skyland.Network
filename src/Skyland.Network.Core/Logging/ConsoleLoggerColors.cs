@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Logging
+namespace Skyland.Network.Core.Logging
 {
     class ConsoleLoggerColors
     {

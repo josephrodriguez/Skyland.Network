@@ -2,7 +2,7 @@
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Configuration.Builders
+namespace Skyland.Network.Tcp.Server.Configuration.Builders
 {
     public abstract class Builder<TComponent>
     {

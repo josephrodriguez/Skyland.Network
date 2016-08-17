@@ -1,15 +1,14 @@
 ﻿#region using
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using RoyalSoft.Network.Core.Pipeline.Handlers;
-using RoyalSoft.Network.Core.Pipeline.Internal;
+using Skyland.Network.Core.Pipeline.Handlers;
+using Skyland.Network.Core.Pipeline.Internal;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Pipeline
+namespace Skyland.Network.Core.Pipeline
 {
     public class Pipeline<T> : IPipeline<T>
     {

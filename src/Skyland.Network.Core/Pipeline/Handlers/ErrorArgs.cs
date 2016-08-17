@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Pipeline.Handlers
+namespace Skyland.Network.Core.Pipeline.Handlers
 {
     public class ErrorArgs<TElement>
     {

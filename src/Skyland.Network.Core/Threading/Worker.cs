@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Threading
+namespace Skyland.Network.Core.Threading
 {
     public class Worker : IDisposable
     {

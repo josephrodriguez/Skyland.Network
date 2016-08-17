@@ -2,14 +2,14 @@
 
 using System;
 using System.Net;
-using RoyalSoft.Network.Core.Asserts;
-using RoyalSoft.Network.Core.Logging;
-using RoyalSoft.Network.Tcp.Server.Configuration.Builders;
-using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
+using Skyland.Network.Core.Asserts;
+using Skyland.Network.Core.Logging;
+using Skyland.Network.Tcp.Server.Configuration.Builders;
+using Skyland.Network.Tcp.Server.Configuration.Interfaces;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Internal
+namespace Skyland.Network.Tcp.Server.Internal
 {
     public class ServerBuilder
     {

@@ -3,23 +3,20 @@
 using System;
 using System.Collections.Concurrent;
 using System.Net;
-using System.Net.Security;
 using System.Net.Sockets;
-using System.Text;
-using RoyalSoft.Network.Core.Compression;
-using RoyalSoft.Network.Core.Logging;
-using RoyalSoft.Network.Core.Pipeline;
-using RoyalSoft.Network.Core.Pipeline.Handlers;
-using RoyalSoft.Network.Core.Threading;
-using RoyalSoft.Network.Tcp.Server.Configuration.Interfaces;
-using RoyalSoft.Network.Tcp.Server.Dispatchers;
-using RoyalSoft.Network.Tcp.Server.Enum;
-using RoyalSoft.Network.Tcp.Server.Internal.Pipeline;
-using RoyalSoft.Network.Tcp.Server.Monitors;
+using Skyland.Network.Core.Logging;
+using Skyland.Network.Core.Pipeline;
+using Skyland.Network.Core.Pipeline.Handlers;
+using Skyland.Network.Core.Threading;
+using Skyland.Network.Tcp.Server.Configuration.Interfaces;
+using Skyland.Network.Tcp.Server.Dispatchers;
+using Skyland.Network.Tcp.Server.Enum;
+using Skyland.Network.Tcp.Server.Internal.Pipeline;
+using Skyland.Network.Tcp.Server.Monitors;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Internal
+namespace Skyland.Network.Tcp.Server.Internal
 {
     internal class HubServer : IHubServer
     {

@@ -3,12 +3,12 @@
 using System;
 using System.Collections.Concurrent;
 using System.Threading;
-using RoyalSoft.Network.Core.Pipeline.Handlers;
-using RoyalSoft.Network.Core.Threading;
+using Skyland.Network.Core.Pipeline.Handlers;
+using Skyland.Network.Core.Threading;
 
 #endregion
 
-namespace RoyalSoft.Network.Core.Pipeline.Internal
+namespace Skyland.Network.Core.Pipeline.Internal
 {
     class Stage<T>
     {

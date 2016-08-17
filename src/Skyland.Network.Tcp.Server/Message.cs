@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace RoyalSoft.Network.Tcp.Server
+namespace Skyland.Network.Tcp.Server
 {
     public class Message
     {

@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Client.Configuration
+namespace Skyland.Network.Tcp.Client.Configuration
 {
     public class Configurer
     {

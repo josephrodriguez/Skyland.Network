@@ -4,7 +4,7 @@ using System.Net;
 
 #endregion
 
-namespace RoyalSoft.Network.Tcp.Server.Handlers
+namespace Skyland.Network.Tcp.Server.Handlers
 {
     public delegate void ClientConnectedEventHandler(EndPoint endpoint);
 }

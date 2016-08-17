@@ -1,4 +1,4 @@
-﻿namespace RoyalSoft.Network.Core.Pipeline
+﻿namespace Skyland.Network.Core.Pipeline
 {
     public class PipelineElement<T>
     {

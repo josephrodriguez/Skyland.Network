@@ -1,6 +1,6 @@
 ﻿using System.Net.Security;
 
-namespace RoyalSoft.Network.Tcp.Client.Configuration
+namespace Skyland.Network.Tcp.Client.Configuration
 {
     public interface IEvents
     {

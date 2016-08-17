@@ -1,4 +1,4 @@
-﻿namespace RoyalSoft.Network.Core.Compression
+﻿namespace Skyland.Network.Core.Compression
 {
     public interface ICompressor
     {
