@@ -1,5 +1,5 @@
 language: csharp
-solution: RoyalSoft.Network.sln
+solution: Skyland.Network.sln
 dist: trusty
 os:
   - linux
